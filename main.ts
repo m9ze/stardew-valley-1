@@ -1,9 +1,11 @@
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile32`, function (sprite, location) {
-    if (info.score() >= 100) {
+    if (sementes >= 1) {
         tiles.setTileAt(location, assets.tile`myTile48`)
-        info.changeScoreBy(-100)
+        sementes += -1
     }
 })
+let sementes = 0
+sementes = 81
 tiles.setTilemap(tilemap`level2`)
 game.showLongText("Este jogo é inspirado num jogo real \"Stardew Valley\" e tem como objetivo cuidar de uma fazenda.", DialogLayout.Bottom)
 game.showLongText("o jogo consiste em plantar, vender os produtos colhidos", DialogLayout.Bottom)
